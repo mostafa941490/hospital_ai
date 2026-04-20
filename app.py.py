@@ -3,7 +3,12 @@ import numpy as np
 import pandas as pd
 import time
 import plotly.graph_objects as go
-
+import traceback
+try:
+    # Your existing code here
+except Exception as e:
+    st.error(f"Critical Error: {str(e)}")
+    st.code(traceback.format_exc())
 # Local Imports
 from model import load_model_and_scaler, predict_ml, generate_local_ai_insight, jarvis_chat_response_local
 from database import init_db, save_patient, get_all_patients
